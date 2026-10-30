@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  background-color: #03050a;
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  background-color: #03050a;
+  color: #f8fafc;
+  overflow-x: clip;
+  letter-spacing: -0.01em;
+  touch-action: pan-y;
+}
+
+/* Smooth optical rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbars on horizontal pill docks for mobile & tablet */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Apple iPhone Product Page Easing Curves & Keyframes */
+:root {
+  --apple-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --apple-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --apple-dock-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Apple LocalNav Frosted Glass Header */
+.apple-localnav-glass {
+  background: rgba(11, 13, 20, 0.72);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+/* Apple Floating Bottom Controller Pill Glass */
+.apple-controller-pill {
+  background: rgba(28, 28, 34, 0.78);
+  backdrop-filter: saturate(180%) blur(24px);
+  -webkit-backdrop-filter: saturate(180%) blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+    0 20px 50px rgba(0, 0, 0, 0.85);
+}
+
+/* Subtle architectural grid background (Linear / Vercel / Raycast style) */
+.bg-architectural-grid {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+}
+
+/* Specular luxury dark card surface */
+.luxury-card {
+  background: linear-gradient(180deg, rgba(19, 25, 40, 0.78) 0%, rgba(9, 13, 22, 0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 24px 60px -15px rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.55s var(--apple-ease-out) forwards;
+}
+
+@keyframes appleFloatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-apple-float {
+  animation: appleFloatSlow 5s ease-in-out infinite;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #03050a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
